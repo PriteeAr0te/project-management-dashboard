@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/logo.png'
-import { MdSpaceDashboard } from 'react-icons/md'
+import { LayoutDashboard } from 'lucide-react'
 
 const Navbar = () => {
   return (
@@ -24,7 +24,7 @@ const Navbar = () => {
             to="/"
             className={`flex w-fit h-fit text-sm whitespace-nowrap sm:text-base cursor-pointer justify-center rounded-md px-3 py-2 font-medium text-foreground hover:bg-light focus:border-0 focus:outline-none`}
           >
-            <span className='sm:hidden block'> <MdSpaceDashboard size={24} /></span>
+            <span className='sm:hidden block'> <LayoutDashboard size={24} /></span>
             <span className='sm:block hidden'>Dashboard</span>
           </Link>
 
