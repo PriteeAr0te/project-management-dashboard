@@ -1,11 +1,29 @@
+import { lazy, Suspense } from "react"
+import Navbar from "./components/Navbar"
+import Spinner from "./components/Spinner"
+import ErrorPage from "./pages/ErrorPage"
+import { Route, Routes } from "react-router-dom"
 
+const Dashboard = lazy(() => import("./pages/Dashboard"))
+const AddProduct = lazy(() => import("./pages/AddProduct"))
+const ProductDetails = lazy(() => import("./pages/ProductDetails"))
 
 function App() {
 
   return (
-    <>
-      <h1 className="text-center h-[100vh] w-[100vw] text-blue-600 font-semibold">Product Management Dashboard</h1>
-    </>
+    <div className="min-h-[100vh-64px] bg-background text-foreground ">
+      <Navbar />
+
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/add-product" element={<AddProduct />} />
+          <Route path="/product-details/:id" element={<ProductDetails />} />
+
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Suspense>
+    </div>
   )
 }
 
