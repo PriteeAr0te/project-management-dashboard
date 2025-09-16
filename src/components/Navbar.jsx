@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="bg-extra-light mb-2 font-light px-2 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
       <div className="flex justify-between h-16 items-center">
-        <Link to="/" className="flex-shrink-0 flex items-center h-fit">
+        <Link to="/" className="flex-shrink-0 flex items-center h-fit focus:outline-0">
           <img
             className="h-8 w-auto"
             width={200}
@@ -22,7 +22,7 @@ const Navbar = () => {
 
           <Link
             to="/"
-            className={`flex w-fit h-fit text-sm whitespace-nowrap sm:text-base cursor-pointer justify-center rounded-md px-3 py-2 font-medium text-foreground hover:bg-light focus:border-0 focus:outline-none`}
+            className={`flex w-fit h-fit text-sm whitespace-nowrap sm:text-base cursor-pointer justify-center rounded-md px-3 py-2 font-medium text-foreground hover:bg-light focus:border-0 focus:outline-none ${location.pathname === "/" ? "text-primary underline underline-offset-2" : ""}`}
           >
             <span className='sm:hidden block'> <LayoutDashboard size={24} /></span>
             <span className='sm:block hidden'>Dashboard</span>
