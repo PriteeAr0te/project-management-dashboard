@@ -2,7 +2,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useProductsContext } from "../hooks/useProductsContext";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { Star } from "lucide-react";
 
 const ProductDetails = () => {
   const { id } = useParams();
